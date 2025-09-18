@@ -41,7 +41,6 @@ function validarTextoVacio(textoUsuario) {
     }
 }
 
-
 /*Función que realiza el sorteo aleatorio por medio de indice random*/
 function sorteoAleatorio() {
 
@@ -55,7 +54,10 @@ function sorteoAleatorio() {
         idNombreSeleccionado = generarIndice(cantidadNombres);
         
         let nombreElegido = arrayAmigos[idNombreSeleccionado]; //Selecciona el elemento del arreglo según el id de la funcion
-        document.getElementById('resultado').innerHTML = nombreElegido; //Despliega el elemento seleccionado   
+        document.getElementById('resultado').innerHTML = `¡BIEN, el nombre seleccionado es: ${nombreElegido}`; //Despliega el elemento seleccionado   
+        document.getElementById('listaAmigos').innerHTML = ""; //Limpia la lista de nombres
+        arrayAmigos=[]; //Limpia el arreglo    
+        
         } else {
             //Alerta no se pueden sortear con 1 nombres
             alert ("No es posible realizar el sorteo, agregue mas nombres a la lista");
@@ -82,6 +84,5 @@ function validarSoloTexto(elemento) {
     function limpiarInputAmigo () {
     document.querySelector('#amigo').value = '';
     document.querySelector('#amigo').focus();
-}
+}  
 
-    
